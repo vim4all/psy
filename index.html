@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Юлія Кудренко — психолог, гештальт-терапевт. Онлайн-консультації для дорослих і пар: тривога, вигорання, стосунки, адаптація. Магістр психології, супервізія та особиста терапія." />
+  <meta name="keywords" content="психолог онлайн, гештальт-терапевт, Юлія Кудренко, психотерапія онлайн, консультація психолога, парна терапія, арт-терапія" />
+  <meta name="author" content="Юлія Кудренко" />
+  <meta property="og:title" content="Юлія Кудренко — Психолог, гештальт-терапевт" />
+  <meta property="og:description" content="Онлайн-консультації: тривога, вигорання, стосунки, адаптація. Гештальт- та арт-терапія, індивідуальний і парний формат." />
+  <meta property="og:type" content="website" />
+  <title>Юлія Кудренко — Психолог, гештальт-терапевт</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --plum:        #bf5b3a;
+      --plum-dark:   #3f2a42;
+      --plum-light:  #e2926c;
+      --plum-pale:   #ecdcc4;
+      --plum-ghost:  #f8f2e6;
+      --mauve:       #a9673f;
+      --gold:        #cf9d3e;
+      --bg:          #f7f1e6;
+      --surface:     #efe6d6;
+      --surface-2:   #e6d9c2;
+      --text:        #2a2018;
+      --text-mid:    #5c4f42;
+      --text-muted:  #8a7c6c;
+      --border:      rgba(191,91,58,0.20);
+      --border-soft: rgba(191,91,58,0.12);
+      --radius:      14px;
+      --radius-lg:   24px;
+      --radius-xl:   40px;
+      --shadow:      0 8px 40px rgba(63,42,66,0.14);
+      --shadow-sm:   0 2px 16px rgba(63,42,66,0.08);
+      --t:           0.3s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 1.4rem 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: var(--t);
+    }
+    .nav.scrolled {
+      background: rgba(253,251,250,0.96);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-logo { display: flex; flex-direction: row; align-items: center; gap: 0.7rem; text-decoration: none; }
+    .brand-mark { position: relative; width: 30px; height: 22px; flex-shrink: 0; }
+    .brand-mark span { position: absolute; top: 1px; width: 19px; height: 19px; border-radius: 50%; mix-blend-mode: multiply; }
+    .brand-mark span:first-child { left: 0; background: var(--plum); }
+    .brand-mark span:last-child { left: 10px; background: var(--mauve); }
+    .brand-mark.on-dark span { mix-blend-mode: normal; opacity: 0.92; }
+    .brand-mark.on-dark span:first-child { background: var(--plum-light); }
+    .brand-mark.on-dark span:last-child { background: rgba(255,255,255,0.55); }
+    .nav-logo-text { display: flex; flex-direction: column; }
+    .nav-logo-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.45rem; font-weight: 600; color: var(--plum-dark);
+      line-height: 1.1;
+    }
+    .nav-logo-title {
+      font-size: 0.67rem; color: var(--mauve); font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .nav-links { display: flex; list-style: none; gap: 1.9rem; align-items: center; }
+    .nav-links a { color: var(--text-mid); text-decoration: none; font-size: 0.87rem; font-weight: 500; transition: var(--t); }
+    .nav-links a:hover { color: var(--plum); }
+    .nav-cta {
+      background: var(--plum) !important; color: white !important;
+      padding: 0.5rem 1.35rem; border-radius: 50px; font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: var(--plum-dark) !important; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(191,91,58,0.35); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: var(--t); }
+    .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none; position: fixed; inset: 0;
+      background: rgba(253,251,250,0.98); z-index: 999;
+      flex-direction: column; align-items: center; justify-content: center; gap: 2.1rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { color: var(--text); text-decoration: none; font-size: 1.5rem; font-weight: 600; transition: var(--t); }
+    .mobile-menu a:hover { color: var(--plum); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 7rem 5vw 4rem;
+      background: linear-gradient(135deg, var(--bg) 0%, #efe0cc 100%);
+      position: relative; overflow: hidden;
+      gap: 3rem;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -14%; right: -8%;
+      width: 46vw; height: 46vw; max-width: 480px; max-height: 480px;
+      border-radius: 50%; border: 1.5px solid rgba(191,91,58,0.22);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; top: -14%; right: 6%;
+      width: 30vw; height: 30vw; max-width: 320px; max-height: 320px;
+      border-radius: 50%; border: 1.5px solid rgba(63,42,66,0.16);
+      pointer-events: none;
+    }
+    .hero-text { position: relative; z-index: 1; }
+    .hero-text::before {
+      content: ''; position: absolute; top: -2.2rem; left: -2.5rem;
+      width: 220px; height: 220px; border-radius: 50%;
+      border: 1.5px solid var(--plum); opacity: 0.16; z-index: -1;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--plum-pale); color: var(--plum-dark);
+      font-size: 0.77rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 0.45rem 1rem; border-radius: 50px; margin-bottom: 1.8rem;
+    }
+    .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--plum); }
+    .hero h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      color: var(--plum-dark); line-height: 1.1; margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .hero h1 em { font-style: italic; color: var(--plum); }
+    .hero-sub {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.3rem, 3vw, 1.75rem);
+      color: var(--text-mid); margin-bottom: 1.5rem; font-weight: 400;
+    }
+    .hero-desc { font-size: 1rem; color: var(--text-muted); max-width: 480px; margin-bottom: 2.5rem; line-height: 1.85; }
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 2rem; border-radius: 50px;
+      font-family: 'Inter', sans-serif; font-size: 0.93rem; font-weight: 600;
+      cursor: pointer; text-decoration: none; transition: all var(--t); border: none;
+    }
+    .btn-primary { background: var(--plum); color: white; box-shadow: 0 4px 20px rgba(191,91,58,0.32); }
+    .btn-primary:hover { background: var(--plum-dark); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(191,91,58,0.4); }
+    .btn-outline { background: transparent; color: var(--plum); border: 1.5px solid var(--plum); }
+    .btn-outline:hover { background: var(--plum-pale); transform: translateY(-2px); }
+    .btn-white { background: white; color: var(--plum-dark); box-shadow: var(--shadow-sm); }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+
+    .hero-photo-wrap { position: relative; z-index: 1; display: flex; justify-content: center; align-items: center; min-height: 420px; }
+    .hero-photo-ring {
+      position: absolute; z-index: 0;
+      width: min(320px, 78%); aspect-ratio: 1/1; border-radius: 50%;
+      border: 2px solid var(--plum); opacity: 0.55;
+      top: 50%; left: 50%; transform: translate(-58%, -44%);
+    }
+    .hero-photo-dot {
+      position: absolute; z-index: 2;
+      width: 54px; height: 54px; border-radius: 50%;
+      background: var(--gold); opacity: 0.9;
+      bottom: 6%; right: 10%;
+      mix-blend-mode: multiply;
+    }
+    .hero-photo {
+      position: relative; z-index: 1;
+      width: min(340px, 84%);
+      border-radius: 50%;
+      object-fit: cover; object-position: top center;
+      aspect-ratio: 1/1;
+      display: block;
+      border: 7px solid var(--bg);
+      filter: drop-shadow(0 20px 50px rgba(63,42,66,0.30));
+    }
+    .hero-chip {
+      position: absolute; z-index: 2;
+      background: white; border-radius: var(--radius); padding: 0.85rem 1.2rem;
+      box-shadow: var(--shadow); display: flex; align-items: center; gap: 0.7rem;
+    }
+    .hero-chip-1 { bottom: 12%; left: -4%; }
+    .hero-chip-2 { top: 20%; right: -6%; }
+    .chip-icon { font-size: 1.4rem; }
+    .chip-val { font-weight: 700; font-size: 1.1rem; color: var(--plum-dark); line-height: 1; }
+    .chip-lbl { font-size: 0.72rem; color: var(--text-muted); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar { background: var(--plum-dark); padding: 1.5rem 2rem; }
+    .trust-inner { max-width: 1100px; margin: auto; display: flex; justify-content: center; gap: 3.5rem; flex-wrap: wrap; }
+    .trust-item { text-align: center; }
+    .trust-num { font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 600; color: white; line-height: 1; }
+    .trust-lbl { font-size: 0.75rem; color: rgba(255,255,255,0.65); margin-top: 0.3rem; font-weight: 500; letter-spacing: 0.05em; }
+
+    /* ── LAYOUT ── */
+    section { padding: 5.5rem 2rem; }
+    .container { max-width: 1140px; margin: auto; }
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--plum); margin-bottom: 0.8rem;
+    }
+    .section-tag::before {
+      content: ''; display: inline-block; width: 9px; height: 9px; border-radius: 50%;
+      background: var(--plum); box-shadow: 8px 0 0 0 var(--mauve); opacity: 0.9;
+    }
+    h2.section-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.2rem, 5vw, 3rem); font-weight: 600;
+      color: var(--text); margin-bottom: 1rem; line-height: 1.25;
+    }
+    .section-subtitle { color: var(--text-muted); font-size: 1.02rem; max-width: 580px; line-height: 1.85; }
+    .section-header { margin-bottom: 3.5rem; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-subtitle { margin: 0 auto; }
+    .section-header.center .section-tag { justify-content: center; padding-left: 8px; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--bg); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 4.5rem; align-items: center; }
+    .about-img-wrap { position: relative; padding: 1.5rem; }
+    .about-img {
+      width: 100%; aspect-ratio: 1/1; max-height: 480px; object-fit: cover; object-position: top;
+      border-radius: 50%; display: block; box-shadow: var(--shadow);
+      border: 8px solid var(--bg); position: relative; z-index: 1;
+    }
+    .about-deco {
+      position: absolute; top: 0; left: -6%;
+      width: 62%; height: 62%;
+      border: 2px solid var(--plum); border-radius: 50%; z-index: 0; opacity: 0.5;
+    }
+    .about-badge {
+      position: absolute; bottom: 0.5rem; right: -0.5rem; z-index: 2;
+      width: 116px; height: 116px; border-radius: 50%;
+      background: var(--plum); color: white;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      box-shadow: var(--shadow); text-align: center; mix-blend-mode: normal;
+    }
+    .about-badge strong { display: block; font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 600; line-height: 1; }
+    .about-badge span { font-size: 0.73rem; opacity: 0.85; }
+    .about-text .section-title { margin-bottom: 0.75rem; }
+    .about-text .section-subtitle { margin-bottom: 1.75rem; }
+    .certs-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 2rem; }
+    .certs-list li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9rem; color: var(--text-mid); }
+    .cert-dot {
+      width: 20px; height: 20px; border-radius: 50%; background: var(--plum-pale);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 0.1rem;
+      font-size: 0.65rem; color: var(--plum-dark);
+    }
+    .values-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+    .value-card { background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 1.25rem; transition: var(--t); }
+    .value-card:hover { border-color: var(--plum); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+    .value-icon { font-size: 1.6rem; margin-bottom: 0.5rem; display: block; }
+    .value-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
+    .value-card p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.55; }
+
+    /* ── BIO QUOTE STRIP ── */
+    .bio-strip { max-width: 780px; margin: 2.5rem auto 0; text-align: center; }
+    .bio-strip p { font-size: 0.95rem; color: var(--text-mid); line-height: 1.9; white-space: pre-line; }
+
+    /* ── EDUCATION / CERTIFICATES ── */
+    #education { background: var(--surface); }
+    .cert-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.4rem; }
+    .cert-card {
+      background: white; border: 1px solid var(--border-soft); border-radius: var(--radius-lg);
+      overflow: hidden; transition: var(--t); cursor: pointer; display: flex; flex-direction: column;
+    }
+    .cert-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--plum-pale); }
+    .cert-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: var(--surface-2); }
+    .cert-card-body { padding: 1rem 1.1rem 1.2rem; }
+    .cert-card-body h4 { font-size: 0.86rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; line-height: 1.4; }
+    .cert-card-body p { font-size: 0.76rem; color: var(--text-muted); line-height: 1.5; }
+
+    .lightbox {
+      display: none; position: fixed; inset: 0; z-index: 2000;
+      background: rgba(20,14,26,0.88); align-items: center; justify-content: center; padding: 3rem 1.5rem;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: min(900px, 92vw); max-height: 86vh; border-radius: var(--radius); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+    .lightbox-close {
+      position: absolute; top: 1.5rem; right: 1.8rem; width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); color: white;
+      font-size: 1.3rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,0.22); }
+
+    /* ── SERVICES ── */
+    #services { background: var(--bg); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .service-card {
+      background: white; border-radius: var(--radius-lg); padding: 2rem;
+      border: 1px solid var(--border-soft); transition: all var(--t); display: flex; flex-direction: column;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--plum-pale); }
+    .service-card.featured { background: var(--plum); color: white; border-color: var(--plum); }
+    .service-card.featured h3, .service-card.featured p { color: white; }
+    .service-card.featured .service-price { color: rgba(255,255,255,0.9); }
+    .service-card.featured .service-tag { background: rgba(255,255,255,0.2); color: white; }
+    .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .service-tag {
+      display: inline-block; background: var(--plum-pale); color: var(--plum-dark);
+      font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 0.25rem 0.7rem; border-radius: 50px; margin-bottom: 0.9rem; width: fit-content;
+    }
+    .service-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; }
+    .service-card p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; flex: 1; }
+    .service-list { list-style: none; margin: 1rem 0 0; display: flex; flex-direction: column; gap: 0.45rem; }
+    .service-list li { font-size: 0.83rem; color: var(--text-mid); display: flex; gap: 0.5rem; align-items: flex-start; }
+    .service-card.featured .service-list li { color: rgba(255,255,255,0.85); }
+    .service-list li::before { content: '✓'; color: var(--plum); font-weight: 700; flex-shrink: 0; }
+    .service-card.featured .service-list li::before { color: rgba(255,255,255,0.9); }
+    .service-price {
+      display: block; font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600; color: var(--plum);
+      margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--border-soft);
+    }
+    .service-card.featured .service-price { border-color: rgba(255,255,255,0.2); }
+
+    /* ── PROCESS ── */
+    #process { background: var(--surface); }
+    .process-track { position: relative; }
+    .process-track::before {
+      content: ''; position: absolute; top: 30px; left: calc(50% - 1px);
+      width: 2px; height: calc(100% - 60px);
+      background: linear-gradient(to bottom, var(--plum-pale), var(--plum), var(--plum-pale));
+      z-index: 0;
+    }
+    .process-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem 6rem; position: relative; z-index: 1; }
+    .process-step { background: white; border-radius: var(--radius-lg); padding: 2rem; border: 1px solid var(--border-soft); transition: var(--t); }
+    .process-step:hover { box-shadow: var(--shadow-sm); border-color: var(--plum-pale); }
+    .process-step:nth-child(even) { margin-top: 3rem; }
+    .step-num {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--plum-pale); color: var(--plum-dark);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 700;
+      margin-bottom: 1.25rem;
+    }
+    .process-step h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; }
+    .process-step p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* ── APPROACH ── */
+    #approach { background: var(--bg); }
+    .approach-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .approach-list { display: flex; flex-direction: column; gap: 1.5rem; }
+    .approach-item { display: flex; gap: 1.25rem; align-items: flex-start; }
+    .approach-num {
+      width: 40px; height: 40px; flex-shrink: 0; border-radius: 10px;
+      background: var(--plum); color: white; display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.88rem;
+    }
+    .approach-item h4 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.25rem; }
+    .approach-item p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.7; }
+    .approach-quote {
+      background: var(--plum-dark); color: white; border-radius: var(--radius-xl); padding: 3rem;
+      position: relative; overflow: hidden;
+    }
+    .approach-quote::before {
+      content: '"'; position: absolute; top: -1rem; left: 1.5rem;
+      font-family: 'Fraunces', serif; font-size: 10rem; color: rgba(255,255,255,0.07); line-height: 1;
+    }
+    .approach-quote::after {
+      content: ''; position: absolute; width: 150px; height: 150px; border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.14); bottom: -50px; right: -30px; pointer-events: none;
+    }
+    .approach-quote p {
+      font-family: 'Fraunces', serif; font-size: 1.5rem; font-style: italic; line-height: 1.6;
+      color: rgba(255,255,255,0.92); position: relative;
+    }
+    .approach-quote cite { display: block; margin-top: 1.5rem; font-style: normal; font-size: 0.82rem; color: rgba(255,255,255,0.55); letter-spacing: 0.05em; }
+
+    /* ── TESTIMONIALS / TRUST ── */
+    #testimonials { background: var(--surface); }
+    .rating-summary {
+      display: flex; align-items: center; justify-content: center; gap: 1.2rem;
+      margin-bottom: 2.5rem; flex-wrap: wrap;
+    }
+    .rating-summary .brand-mark { width: 26px; height: 20px; }
+    .rating-summary .brand-mark span { width: 17px; height: 17px; }
+    .rating-num { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 600; color: var(--plum-dark); line-height: 1; }
+    .rating-meta { text-align: left; }
+    .rating-stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 0.1em; }
+    .rating-count { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem; }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
+    .testimonial-card { background: white; border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 2rem; transition: all var(--t); }
+    .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--plum-pale); }
+    .stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 0.05em; }
+    .t-text { color: var(--text-mid); font-size: 0.92rem; line-height: 1.8; margin-bottom: 1.5rem; font-style: italic; }
+    .t-author { display: flex; align-items: center; gap: 0.8rem; }
+    .t-avatar {
+      width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0; background: var(--plum-pale);
+      display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--plum-dark); font-size: 1rem;
+    }
+    .t-name { font-weight: 700; font-size: 0.88rem; color: var(--text); }
+    .t-meta { font-size: 0.76rem; color: var(--text-muted); margin-top: 0.1rem; }
+    .t-source { margin-top: 1.25rem; font-size: 0.75rem; }
+    .t-source a { color: var(--plum); text-decoration: none; font-weight: 600; }
+    .t-source a:hover { text-decoration: underline; }
+
+    /* ── CTA BANNER ── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--plum) 0%, var(--plum-dark) 100%);
+      text-align: center; padding: 6rem 2rem; position: relative; overflow: hidden;
+    }
+    .cta-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='40' cy='40' r='1.5' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
+    }
+    .cta-ring { position: absolute; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.14); pointer-events: none; }
+    .cta-ring-1 { width: 300px; height: 300px; top: -110px; left: -70px; }
+    .cta-ring-2 { width: 220px; height: 220px; bottom: -90px; right: -50px; border-color: rgba(255,255,255,0.10); }
+    .cta-inner { position: relative; max-width: 640px; margin: auto; }
+    .cta-banner h2 {
+      font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 600;
+      color: white; margin-bottom: 1rem; line-height: 1.2;
+    }
+    .cta-banner p { font-size: 1.05rem; color: rgba(255,255,255,0.78); margin-bottom: 2rem; line-height: 1.7; }
+    .cta-chips { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .cta-chip { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.82rem; font-weight: 500; }
+
+    /* ── FAQ ── */
+    #faq { background: var(--bg); }
+    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.85rem; }
+    .faq-item { background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius); overflow: hidden; transition: var(--t); }
+    .faq-item.open { border-color: var(--plum-pale); box-shadow: var(--shadow-sm); }
+    .faq-question { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 1.5rem; cursor: pointer; user-select: none; }
+    .faq-question span { font-weight: 600; font-size: 0.92rem; color: var(--text); }
+    .faq-icon {
+      width: 28px; height: 28px; border-radius: 50%; background: white;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--plum); font-size: 1.2rem; transition: transform var(--t); flex-shrink: 0; margin-left: 1rem;
+    }
+    .faq-item.open .faq-icon { background: var(--plum); color: white; transform: rotate(45deg); }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-item.open .faq-answer { max-height: 260px; }
+    .faq-answer p { padding: 0 1.5rem 1.25rem; color: var(--text-muted); font-size: 0.88rem; line-height: 1.85; }
+
+    /* ── BOOKING / CONTACT ── */
+    #contact { background: var(--surface); }
+    .booking-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: stretch; }
+    .booking-card {
+      background: var(--plum-dark); color: white; border-radius: var(--radius-xl);
+      padding: 2.75rem; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .booking-card h3 { font-family: 'Fraunces', serif; font-size: 1.9rem; font-weight: 600; margin-bottom: 0.75rem; }
+    .booking-card p { color: rgba(255,255,255,0.78); font-size: 0.92rem; line-height: 1.8; margin-bottom: 1.75rem; }
+    .booking-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; }
+    .booking-fact { background: rgba(255,255,255,0.08); border-radius: var(--radius); padding: 0.9rem 1rem; }
+    .booking-fact-lbl { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.55); margin-bottom: 0.2rem; }
+    .booking-fact-val { font-weight: 700; font-size: 0.98rem; }
+    .booking-buttons { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+
+    .contact-side { display: flex; flex-direction: column; gap: 1.1rem; }
+    .contact-card {
+      background: white; border: 1px solid var(--border-soft); border-radius: var(--radius);
+      padding: 1.2rem 1.4rem; display: flex; align-items: center; gap: 1rem; transition: var(--t);
+    }
+    .contact-card:hover { border-color: var(--plum-pale); box-shadow: var(--shadow-sm); }
+    .contact-card-icon {
+      width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0; background: var(--plum-pale);
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    }
+    .cc-label { font-size: 0.7rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.2rem; }
+    .cc-val { font-weight: 600; font-size: 0.9rem; color: var(--text); }
+    .cc-val a { color: var(--text); text-decoration: none; transition: var(--t); }
+    .cc-val a:hover { color: var(--plum); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--plum-dark); color: rgba(255,255,255,0.75); padding: 4rem 2rem 2.5rem; }
+    .footer-grid {
+      max-width: 1140px; margin: auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem;
+      padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem;
+    }
+    .footer-logo-name { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 600; color: white; display: block; margin-bottom: 0.2rem; }
+    .footer-logo-sub { font-size: 0.7rem; color: rgba(255,255,255,0.45); letter-spacing: 0.1em; text-transform: uppercase; }
+    .footer-brand p { margin-top: 1rem; font-size: 0.87rem; line-height: 1.75; max-width: 280px; }
+    .footer-col h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .footer-col ul a { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.87rem; transition: var(--t); }
+    .footer-col ul a:hover { color: white; }
+    .footer-bottom { max-width: 1140px; margin: auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+    .footer-bottom a { color: rgba(255,255,255,0.6); text-decoration: none; }
+
+    /* ── BACK TO TOP ── */
+    .btt {
+      position: fixed; bottom: 2rem; right: 2rem; width: 48px; height: 48px; border-radius: 50%;
+      background: var(--plum); color: white; border: none; cursor: pointer;
+      font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
+      transition: all var(--t); opacity: 0; pointer-events: none;
+      box-shadow: 0 4px 20px rgba(191,91,58,0.4); z-index: 100;
+    }
+    .btt.visible { opacity: 1; pointer-events: all; }
+    .btt:hover { transform: translateY(-3px); background: var(--plum-dark); }
+
+    /* ── ANIMATIONS ── */
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up:nth-child(2) { transition-delay: 0.1s; }
+    .fade-up:nth-child(3) { transition-delay: 0.2s; }
+    .fade-up:nth-child(4) { transition-delay: 0.3s; }
+    .fade-up:nth-child(5) { transition-delay: 0.4s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 7rem 2rem 4rem; text-align: center; }
+      .hero-desc { max-width: 100%; margin-left: auto; margin-right: auto; }
+      .hero-buttons { justify-content: center; }
+      .hero-photo-wrap { order: -1; }
+      .hero-photo { width: min(280px, 70vw); }
+      .hero-chip-1, .hero-chip-2 { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-img-wrap { max-width: 340px; margin: auto; }
+      .about-badge { right: -0.5rem; bottom: -0.5rem; }
+      .process-grid { grid-template-columns: 1fr; }
+      .process-step:nth-child(even) { margin-top: 0; }
+      .process-track::before { display: none; }
+      .approach-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .booking-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 4rem 1.5rem; }
+      .values-row { grid-template-columns: 1fr; }
+      .booking-facts { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .hero-buttons { flex-direction: column; align-items: stretch; }
+      .btn { justify-content: center; }
+      .trust-inner { gap: 2rem; }
+      .booking-buttons { flex-direction: column; }
+      .booking-buttons .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="navbar">
+  <a href="#home" class="nav-logo">
+    <span class="brand-mark"><span></span><span></span></span>
+    <span class="nav-logo-text">
+      <span class="nav-logo-name">Юлія Кудренко</span>
+      <span class="nav-logo-title">Психолог · Гештальт-терапевт</span>
+    </span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">Про мене</a></li>
+    <li><a href="#education">Освіта</a></li>
+    <li><a href="#services">Послуги</a></li>
+    <li><a href="#approach">Підхід</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact" class="nav-cta">Записатися</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">Про мене</a>
+  <a href="#education" onclick="closeMenu()">Освіта</a>
+  <a href="#services" onclick="closeMenu()">Послуги</a>
+  <a href="#approach" onclick="closeMenu()">Підхід</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#contact" onclick="closeMenu()">Записатися</a>
+</div>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-text">
+    <span class="hero-badge">Перевірений терапевт · Rozmova.me</span>
+    <h1>Юлія<br><em>Кудренко</em></h1>
+    <p class="hero-sub">Психолог, гештальт-терапевт</p>
+    <p class="hero-desc">Допомагаю дорослим і парам знайти опору в собі — працюємо з тривогою, вигоранням, стосунками та складними життєвими змінами. Онлайн, у безпечному темпі, без осуду.</p>
+    <div class="hero-buttons">
+      <a href="https://www.rozmova.me/therapist/yuliya-kudrenko" target="_blank" rel="noopener" class="btn btn-primary">Записатися на консультацію</a>
+      <a href="#services" class="btn btn-outline">Формати роботи</a>
+    </div>
+  </div>
+  <div class="hero-photo-wrap">
+    <div class="hero-photo-ring"></div>
+    <div class="hero-photo-dot"></div>
+    <img src="Yuliya.jpg" alt="Юлія Кудренко — психолог, гештальт-терапевт" class="hero-photo" />
+    <div class="hero-chip hero-chip-1">
+      <span class="chip-icon">🌿</span>
+      <div>
+        <div class="chip-val">7+ років</div>
+        <div class="chip-lbl">у професії</div>
+      </div>
+    </div>
+    <div class="hero-chip hero-chip-2">
+      <span class="chip-icon">💬</span>
+      <div>
+        <div class="chip-val">188 сесій</div>
+        <div class="chip-lbl">на платформі</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><div class="trust-num">7+</div><div class="trust-lbl">Років у психології</div></div>
+    <div class="trust-item"><div class="trust-num">5.0</div><div class="trust-lbl">Рейтинг на Rozmova.me</div></div>
+    <div class="trust-item"><div class="trust-num">Online</div><div class="trust-lbl">По всій Україні та світу</div></div>
+    <div class="trust-item"><div class="trust-num">LGBTQ+</div><div class="trust-lbl">Дружній простір</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap fade-up">
+        <div class="about-deco"></div>
+        <img src="Yuliya.jpg" alt="Юлія Кудренко психолог" class="about-img" />
+        <div class="about-badge">
+          <strong>7+</strong>
+          <span>років практики</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">Про мене</span>
+        <h2 class="section-title">Психолог, гештальт-терапевт із живим інтересом до людини</h2>
+        <p class="section-subtitle">Привіт, мене звати Юлія. Мій шлях до терапії почався з живого інтересу до внутрішнього світу людини, її почуттів, виборів і способів будувати стосунки. Це привело мене до здобуття магістерського ступеня з психології та подальшого професійного розвитку в цій сфері.</p>
+        <ul class="certs-list">
+          <li><span class="cert-dot">✓</span> Магістр психології, Ніжинський державний університет ім. М. Гоголя (2018, з відзнакою)</li>
+          <li><span class="cert-dot">✓</span> Перший ступінь гештальт-терапії завершено, навчаюсь на другому ступені</li>
+          <li><span class="cert-dot">✓</span> Регулярна супервізія та особиста терапія</li>
+          <li><span class="cert-dot">✓</span> Онлайн-консультації українською та російською мовами</li>
+        </ul>
+        <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.85;">Для мене важлива не лише професійна компетентність, а й жива присутність у контакті з клієнтом. Я вірю, що зміни можливі там, де є безпека, прийняття й чесний діалог. У роботі я уважна до темпу людини, її меж і унікального досвіду.</p>
+        <div class="values-row">
+          <div class="value-card fade-up">
+            <span class="value-icon">🌱</span>
+            <h4>Гештальт-підхід</h4>
+            <p>Працюємо з тим, що відбувається тут-і-зараз — з відчуттями, контактом і живим досвідом.</p>
+          </div>
+          <div class="value-card fade-up">
+            <span class="value-icon">🎨</span>
+            <h4>Арт-терапія</h4>
+            <p>За потреби додаю творчі техніки — інколи образ каже більше, ніж слова.</p>
+          </div>
+          <div class="value-card fade-up">
+            <span class="value-icon">🤝</span>
+            <h4>Без осуду</h4>
+            <p>Безпечний простір для будь-якого досвіду — уважність до меж і темпу кожного клієнта.</p>
+          </div>
+          <div class="value-card fade-up">
+            <span class="value-icon">🏳️‍🌈</span>
+            <h4>Інклюзивність</h4>
+            <p>LGBTQ+ дружній простір, досвід роботи з військовими та людьми в еміграції.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bio-strip fade-up">
+      <p>У житті поза роботою я мама, люблю природу, рух, читання та зустрічі з близькими — все це допомагає мені зберігати внутрішній баланс і стійкість.
+Якщо ви шукаєте підтримку, глибше розуміння себе або хочете змін у своєму житті, я буду рада супроводжувати вас у цьому процесі.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION / CERTIFICATES -->
+<section id="education">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-tag">Освіта та сертифікати</span>
+      <h2 class="section-title">Постійне навчання — частина моєї роботи</h2>
+      <p class="section-subtitle">Для мене важливо постійно вдосконалюватись та розширювати свої знання, щоб надавати кваліфіковану допомогу своїм клієнтам. Освіта — це не формальність, а те, що дозволяє краще розуміти вас і ваші потреби.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card fade-up" onclick="openLightbox('certs/cert10.jpg')">
+        <img src="certs/cert10.jpg" alt="Диплом магістра з психології" loading="lazy" />
+        <div class="cert-card-body">
+          <h4>Диплом магістра з відзнакою</h4>
+          <p>Ніжинський державний університет ім. М. Гоголя, спеціальність «Психологія», 2018</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up" onclick="openLightbox('certs/cert1.jpg')">
+        <img src="certs/cert1.jpg" alt="Сертифікат з гештальт-терапії" loading="lazy" />
+        <div class="cert-card-body">
+          <h4>Введення в гештальт-терапію</h4>
+          <p>Київський інститут гештальта і психодрами, 180 год, 2022–2023</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up" onclick="openLightbox('certs/cert3.jpg')">
+        <img src="certs/cert3.jpg" alt="Сертифікати з клінічної психології та пропедевтики психіатрії" loading="lazy" />
+        <div class="cert-card-body">
+          <h4>Клінічна психологія та пропедевтика психіатрії</h4>
+          <p>КІГіП: 160 год (2024–2025) та 80 год + 10 год терапії (2024)</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up" onclick="openLightbox('certs/cert2.jpg')">
+        <img src="certs/cert2.jpg" alt="Сертифікати з психології підлітків та патопсихологічної діагностики" loading="lazy" />
+        <div class="cert-card-body">
+          <h4>Психологія підлітків і патопсихологічна діагностика</h4>
+          <p>Інститут раціонально-інтуїтивної психотерапії «Я», 75 год + 15 год, 2023–2024</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up" onclick="openLightbox('certs/cert4.jpg')">
+        <img src="certs/cert4.jpg" alt="Сертифікат школи психолога-консультанта" loading="lazy" />
+        <div class="cert-card-body">
+          <h4>Базові методи консультування і терапії</h4>
+          <p>Школа психолога-консультанта, інститут «Я», 45 год, 2024</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up" onclick="openLightbox('certs/cert5.jpg')">
+        <img src="certs/cert5.jpg" alt="Сертифікат з арт-терапії" loading="lazy" />
+        <div class="cert-card-body">
+          <h4>Теорія та практика арт-терапії</h4>
+          <p>International Training Company «Osnova», 60 год, 2024</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up" onclick="openLightbox('certs/cert8.jpg')">
+        <img src="certs/cert8.jpg" alt="Сертифікат участі у конференції з гештальт-терапії" loading="lazy" />
+        <div class="cert-card-body">
+          <h4>XVIII Конференція з гештальт-терапії</h4>
+          <p>«Жити — це зараз!», КІГіП, квітень 2024</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up" onclick="openLightbox('certs/cert9.jpg')">
+        <img src="certs/cert9.jpg" alt="Сертифікат тренінгу Діти і війна" loading="lazy" />
+        <div class="cert-card-body">
+          <h4>«Діти і війна»: навчання технік зцілення</h4>
+          <p>Інститут психічного здоров'я / Children and War Foundation, 2022</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up" onclick="openLightbox('certs/cert6.jpg')">
+        <img src="certs/cert6.jpg" alt="Додаткові сертифікати підвищення кваліфікації" loading="lazy" />
+        <div class="cert-card-body">
+          <h4>Підвищення кваліфікації</h4>
+          <p>Inclusion Expert, КПТ у дії, соціальне схвалення, психосоматика — 2021–2024</p>
+        </div>
+      </div>
+      <div class="cert-card fade-up" onclick="openLightbox('certs/cert7.jpg')">
+        <img src="certs/cert7.jpg" alt="Додаткові сертифікати Всеосвіта" loading="lazy" />
+        <div class="cert-card-body">
+          <h4>Курси та вебінари</h4>
+          <p>Стрес-менеджмент, вирішення конфліктів, імідж практичного психолога, арт-терапія з дітьми — 2021</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Закрити">✕</button>
+  <img id="lightbox-img" src="" alt="Сертифікат — збільшене зображення" />
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-tag">Послуги</span>
+      <h2 class="section-title">Формати роботи</h2>
+      <p class="section-subtitle">Онлайн-консультації для дорослих і пар — зручно з будь-якого міста та часового поясу.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card featured fade-up">
+        <span class="service-icon">🧑</span>
+        <span class="service-tag">Популярне</span>
+        <h3>Особиста терапія</h3>
+        <p>Індивідуальна онлайн-сесія у гештальт-підході: тривога, вигорання, стосунки, адаптація, самооцінка та життєві кризи.</p>
+        <ul class="service-list">
+          <li>Тривалість ~50 хвилин</li>
+          <li>Формат — відеозв'язок</li>
+          <li>Гнучкий графік зустрічей</li>
+          <li>За потреби — елементи арт-терапії</li>
+        </ul>
+        <span class="service-price">1700 грн / сесія</span>
+      </div>
+      <div class="service-card fade-up">
+        <span class="service-icon">💞</span>
+        <span class="service-tag">Для двох</span>
+        <h3>Парна терапія</h3>
+        <p>Простір для чесного діалогу з партнером(-кою) — про довіру, конфлікти, близькість і те, як краще чути одне одного.</p>
+        <ul class="service-list">
+          <li>Онлайн-формат для обох партнерів</li>
+          <li>Робота з реальними запитами пари</li>
+          <li>Безпечна, неупереджена позиція терапевта</li>
+        </ul>
+        <span class="service-price">1700 грн / сесія</span>
+      </div>
+      <div class="service-card fade-up">
+        <span class="service-icon">🌍</span>
+        <span class="service-tag">Онлайн</span>
+        <h3>З будь-якої точки світу</h3>
+        <p>Консультації підходять для тих, хто адаптується до нового середовища, живе за кордоном або має військовий досвід.</p>
+        <ul class="service-list">
+          <li>Українська або російська мова</li>
+          <li>Без прив'язки до міста</li>
+          <li>LGBTQ+ дружній підхід</li>
+        </ul>
+        <span class="service-price">Записатися →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-tag">Як це відбувається</span>
+      <h2 class="section-title">Шлях до першої сесії</h2>
+      <p class="section-subtitle">Простий процес запису через платформу Rozmova.me — без зайвих кроків.</p>
+    </div>
+    <div class="process-track">
+      <div class="process-grid">
+        <div class="process-step fade-up">
+          <div class="step-num">1</div>
+          <h3>Запис на консультацію</h3>
+          <p>Обираєте зручний час на сторінці профілю Юлії на Rozmova.me та підтверджуєте запис.</p>
+        </div>
+        <div class="process-step fade-up">
+          <div class="step-num">2</div>
+          <h3>Перша зустріч</h3>
+          <p>Знайомство, ваш запит і очікування від терапії — без поспіху, у комфортному для вас темпі.</p>
+        </div>
+        <div class="process-step fade-up">
+          <div class="step-num">3</div>
+          <h3>Спільний план роботи</h3>
+          <p>Визначаємо, з чим саме працюємо і в якому форматі — індивідуально чи в парі.</p>
+        </div>
+        <div class="process-step fade-up">
+          <div class="step-num">4</div>
+          <h3>Регулярні сесії</h3>
+          <p>Рухаємось у вашому темпі: досліджуємо почуття, шаблони поведінки та можливості змін.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach">
+  <div class="container">
+    <div class="approach-inner">
+      <div>
+        <span class="section-tag">Мій підхід</span>
+        <h2 class="section-title">Терапія як чесний діалог</h2>
+        <p class="section-subtitle" style="margin-bottom:2.5rem;">Я не вірю у швидкі рішення чи готові поради. Мій підхід — уважність до вашого темпу, меж і унікального досвіду.</p>
+        <div class="approach-list">
+          <div class="approach-item fade-up">
+            <div class="approach-num">01</div>
+            <div>
+              <h4>Тут-і-зараз</h4>
+              <p>Гештальт-підхід фокусується на теперішньому досвіді — відчуттях, контакті та тому, що відбувається між нами в моменті.</p>
+            </div>
+          </div>
+          <div class="approach-item fade-up">
+            <div class="approach-num">02</div>
+            <div>
+              <h4>Безпека і прийняття</h4>
+              <p>Вірю, що зміни можливі там, де є безпека, прийняття й чесний діалог — без осуду і поспіху.</p>
+            </div>
+          </div>
+          <div class="approach-item fade-up">
+            <div class="approach-num">03</div>
+            <div>
+              <h4>Творчість у терапії</h4>
+              <p>За потреби включаю техніки арт-терапії — інколи образ чи метафора допомагають побачити те, що складно назвати словами.</p>
+            </div>
+          </div>
+          <div class="approach-item fade-up">
+            <div class="approach-num">04</div>
+            <div>
+              <h4>Постійний розвиток</h4>
+              <p>Регулярна супервізія та особиста терапія — щоб кожен клієнт отримував підтримку на найвищому рівні.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="approach-quote fade-up">
+        <p>Я вірю, що зміни можливі там, де є безпека, прийняття й чесний діалог. У роботі я уважна до темпу людини, її меж і унікального досвіду.</p>
+        <cite>— Юлія Кудренко, психолог</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-tag">Відгуки</span>
+      <h2 class="section-title">Що кажуть клієнти на Rozmova.me</h2>
+      <p class="section-subtitle">Реальні відгуки з профілю Юлії на платформі Rozmova.me.</p>
+    </div>
+    <div class="rating-summary">
+      <span class="brand-mark"><span></span><span></span></span>
+      <div class="rating-num">5.0</div>
+      <div class="rating-meta">
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-count">на основі 2 відгуків · 188 проведених сесій</div>
+      </div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="t-text">«Психотерапія з панею Юлією сподобалася, є над чим замислитись і що обдумати та поговорити зі своєю другою половинкою, з якою власне і виникли проблеми. Дякую.»</p>
+        <div class="t-author">
+          <div class="t-avatar">О</div>
+          <div>
+            <div class="t-name">Олександр</div>
+            <div class="t-meta">Клієнт · Rozmova.me</div>
+          </div>
+        </div>
+        <div class="t-source"><a href="https://www.rozmova.me/therapist/yuliya-kudrenko" target="_blank" rel="noopener">Переглянути на Rozmova.me →</a></div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p class="t-text">«5 із 5 — оцінка сесії з Юлією.»</p>
+        <div class="t-author">
+          <div class="t-avatar">І</div>
+          <div>
+            <div class="t-name">Інна</div>
+            <div class="t-meta">Клієнтка · Rozmova.me</div>
+          </div>
+        </div>
+        <div class="t-source"><a href="https://www.rozmova.me/therapist/yuliya-kudrenko" target="_blank" rel="noopener">Переглянути на Rozmova.me →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-ring cta-ring-1"></div>
+  <div class="cta-ring cta-ring-2"></div>
+  <div class="cta-inner">
+    <h2>Готові зробити перший крок?</h2>
+    <p>Запрошую вас на консультацію, де ми разом будемо працювати над вашими цілями та досягати позитивних змін.</p>
+    <div class="cta-chips">
+      <span class="cta-chip">🌿 Гештальт-терапія</span>
+      <span class="cta-chip">📱 Онлайн, будь-де у світі</span>
+      <span class="cta-chip">🏳️‍🌈 LGBTQ+ дружній простір</span>
+    </div>
+    <a href="https://www.rozmova.me/therapist/yuliya-kudrenko" target="_blank" rel="noopener" class="btn btn-white">Записатися на консультацію →</a>
+  </div>
+</div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-tag">FAQ</span>
+      <h2 class="section-title">Часті запитання</h2>
+      <p class="section-subtitle">Не знайшли відповідь? Напишіть напряму через профіль на Rozmova.me.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Що таке гештальт-терапія?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><p>Підхід, який фокусується на вашому досвіді «тут-і-зараз» — відчуттях, емоціях і контакті з собою та іншими. Замість готових порад терапевт допомагає краще усвідомити власні потреби, межі та способи взаємодії зі світом.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Консультації проходять тільки онлайн?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><p>Так, усі сесії проводяться онлайн у відеоформаті. Це зручно, якщо ви живете в іншому місті чи за кордоном — географія не має значення.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Якою мовою відбуваються сесії?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><p>Консультації можуть проходити українською або російською мовою — оберіть зручну для вас під час запису.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Чи підходить терапія для пар?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><p>Так, поряд з індивідуальними консультаціями доступний формат парної терапії — простір для чесного діалогу про стосунки, довіру та конфлікти.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Скільки коштує консультація?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><p>Вартість однієї сесії — 1700 грн. Точний розклад і запис доступні на сторінці профілю на платформі Rozmova.me.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>Чи є досвід роботи з військовими та людьми в еміграції?</span>
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-answer"><p>Так, є досвід супроводу військових, а також клієнтів, які переживають адаптацію до нового середовища чи еміграцію.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / BOOKING -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Записатися</span>
+      <h2 class="section-title">Зробити перший крок</h2>
+      <p class="section-subtitle">Запис на консультацію відбувається через платформу Rozmova.me, де перевіряються дипломи та кваліфікація всіх спеціалістів.</p>
+    </div>
+    <div class="booking-grid">
+      <div class="booking-card fade-up">
+        <div>
+          <h3>Записатися на консультацію</h3>
+          <p>Оберіть зручний час у профілі Юлії на Rozmova.me — платформі перевірених психологів та психотерапевтів.</p>
+          <div class="booking-facts">
+            <div class="booking-fact">
+              <div class="booking-fact-lbl">Формат</div>
+              <div class="booking-fact-val">Онлайн</div>
+            </div>
+            <div class="booking-fact">
+              <div class="booking-fact-lbl">Вартість</div>
+              <div class="booking-fact-val">1700 грн</div>
+            </div>
+            <div class="booking-fact">
+              <div class="booking-fact-lbl">Мови</div>
+              <div class="booking-fact-val">Укр · Рос</div>
+            </div>
+            <div class="booking-fact">
+              <div class="booking-fact-lbl">Рейтинг</div>
+              <div class="booking-fact-val">5.0 ★</div>
+            </div>
+          </div>
+        </div>
+        <div class="booking-buttons">
+          <a href="https://www.rozmova.me/therapist/yuliya-kudrenko" target="_blank" rel="noopener" class="btn btn-white">Записатися на Rozmova.me →</a>
+        </div>
+      </div>
+
+      <div class="contact-side">
+        <div class="contact-card">
+          <div class="contact-card-icon">🩺</div>
+          <div>
+            <div class="cc-label">Профіль терапевта</div>
+            <div class="cc-val"><a href="https://www.rozmova.me/therapist/yuliya-kudrenko" target="_blank" rel="noopener">rozmova.me/yuliya-kudrenko</a></div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">📸</div>
+          <div>
+            <div class="cc-label">Instagram</div>
+            <div class="cc-val"><a href="https://www.instagram.com/p/C-fu622NR64/?igsh=bTYyNnloeWJ4ZDR5" target="_blank" rel="noopener">Публікація про освіту</a></div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">🌍</div>
+          <div>
+            <div class="cc-label">Формат</div>
+            <div class="cc-val">Онлайн, по всій Україні та світу</div>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-card-icon">🗣️</div>
+          <div>
+            <div class="cc-label">Мови консультацій</div>
+            <div class="cc-val">Українська, російська</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="display:flex;align-items:center;gap:0.7rem;">
+        <span class="brand-mark on-dark"><span></span><span></span></span>
+        <div>
+          <span class="footer-logo-name">Юлія Кудренко</span>
+          <span class="footer-logo-sub">Психолог · Гештальт-терапевт</span>
+        </div>
+      </div>
+      <p>Онлайн-консультації для дорослих і пар у гештальт-підході. Магістр психології, постійне навчання, супервізія та особиста терапія.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Навігація</h4>
+      <ul>
+        <li><a href="#about">Про мене</a></li>
+        <li><a href="#education">Освіта</a></li>
+        <li><a href="#services">Послуги</a></li>
+        <li><a href="#approach">Підхід</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Контакти</h4>
+      <ul>
+        <li><a href="https://www.rozmova.me/therapist/yuliya-kudrenko" target="_blank" rel="noopener">Rozmova.me</a></li>
+        <li><a href="https://www.instagram.com/p/C-fu622NR64/?igsh=bTYyNnloeWJ4ZDR5" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="#contact">Записатися</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Юлія Кудренко — Психолог. Усі права захищено.</p>
+    <p>Записатися: <a href="https://www.rozmova.me/therapist/yuliya-kudrenko" target="_blank" rel="noopener">rozmova.me</a></p>
+  </div>
+</footer>
+
+<button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Вгору">↑</button>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const btt = document.getElementById('btt');
+
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+    btt.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  function toggleMenu() {
+    const h = document.getElementById('hamburger');
+    const m = document.getElementById('mobileMenu');
+    h.classList.toggle('active');
+    m.classList.toggle('open');
+    document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    document.getElementById('hamburger').classList.remove('active');
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function toggleFaq(el) {
+    const item = el.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(e) {
+    if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "name": "Юлія Кудренко",
+      "jobTitle": "Психолог, гештальт-терапевт",
+      "url": "https://www.rozmova.me/therapist/yuliya-kudrenko",
+      "description": "Психолог, гештальт-терапевт. Онлайн-консультації для дорослих і пар: тривога, вигорання, стосунки, адаптація.",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Ніжинський державний університет імені Миколи Гоголя"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": 2
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Що таке гештальт-терапія?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Підхід, який фокусується на досвіді «тут-і-зараз» — відчуттях, емоціях і контакті з собою та іншими."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Консультації проходять тільки онлайн?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Так, усі сесії проводяться онлайн у відеоформаті."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
