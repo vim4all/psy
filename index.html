@@ -315,6 +315,9 @@
       border: 1px solid var(--border-soft); transition: all var(--t); display: flex; flex-direction: column;
     }
     .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--plum-pale); }
+    .service-card.has-photo { padding: 0; overflow: hidden; }
+    .service-photo { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+    .service-card.has-photo .service-card-body { padding: 1.5rem 2rem 2rem; display: flex; flex-direction: column; flex: 1; }
     .service-card.featured { background: var(--plum); color: white; border-color: var(--plum); }
     .service-card.featured h3, .service-card.featured p { color: white; }
     .service-card.featured .service-price { color: rgba(255,255,255,0.9); }
@@ -845,19 +848,23 @@
       <p class="section-subtitle">Колоди МАК можна придбати окремо — для самостійної роботи або в подарунок.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card fade-up">
-        <span class="service-icon">💳</span>
-        <span class="service-tag">Колода МАК</span>
-        <h3>«Про гроші»</h3>
-        <p>Колода метафоричних карт для дослідження свого ставлення до грошей, достатку та фінансових рішень.</p>
-        <span class="service-price">1000 грн / колода</span>
+      <div class="service-card has-photo fade-up">
+        <img src="products/pro-hroshi.jpg" alt="Колода МАК «Про гроші: перезавантаження сенсів»" class="service-photo" loading="lazy" />
+        <div class="service-card-body">
+          <span class="service-tag">Колода МАК</span>
+          <h3>«Про гроші»</h3>
+          <p>Колода метафоричних карт для дослідження свого ставлення до грошей, достатку та фінансових рішень.</p>
+          <span class="service-price">1000 грн / колода</span>
+        </div>
       </div>
-      <div class="service-card fade-up">
-        <span class="service-icon">🌟</span>
-        <span class="service-tag">Колода МАК</span>
-        <h3>«Джерело моєї сили»</h3>
-        <p>Колода метафоричних карт для пошуку внутрішніх ресурсів, опори та підтримки в складні періоди.</p>
-        <span class="service-price">1000 грн / колода</span>
+      <div class="service-card has-photo fade-up">
+        <img src="products/dzherelo-syly.jpg" alt="Колода МАК «Джерело моєї сили»" class="service-photo" loading="lazy" />
+        <div class="service-card-body">
+          <span class="service-tag">Колода МАК</span>
+          <h3>«Джерело моєї сили»</h3>
+          <p>Колода метафоричних карт для пошуку внутрішніх ресурсів, опори та підтримки в складні періоди.</p>
+          <span class="service-price">1000 грн / колода</span>
+        </div>
       </div>
     </div>
   </div>
