@@ -233,6 +233,7 @@
     }
     .section-subtitle { color: var(--text-muted); font-size: 1.02rem; max-width: 580px; line-height: 1.85; }
     #cards .section-subtitle { max-width: none; white-space: nowrap; }
+    #contact .section-header .section-subtitle { max-width: none; white-space: nowrap; }
     .section-header { margin-bottom: 3.5rem; }
     .section-header.center { text-align: center; }
     .section-header.center .section-subtitle { margin: 0 auto; }
@@ -400,20 +401,9 @@
       font-family: 'Fraunces', serif; font-size: 1.5rem; font-style: italic; line-height: 1.6;
       color: rgba(255,255,255,0.92); position: relative;
     }
-    .approach-quote cite { display: block; margin-top: 1.5rem; font-style: normal; font-size: 0.82rem; color: rgba(255,255,255,0.55); letter-spacing: 0.05em; }
 
     /* ── TESTIMONIALS / TRUST ── */
     #testimonials { background: var(--surface); }
-    .rating-summary {
-      display: flex; align-items: center; justify-content: center; gap: 1.2rem;
-      margin-bottom: 2.5rem; flex-wrap: wrap;
-    }
-    .rating-summary .brand-mark { width: 26px; height: 20px; }
-    .rating-summary .brand-mark span { width: 17px; height: 17px; }
-    .rating-num { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 600; color: var(--plum-dark); line-height: 1; }
-    .rating-meta { text-align: left; }
-    .rating-stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 0.1em; }
-    .rating-count { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem; }
     .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; max-width: 900px; margin: 0 auto; }
     .testimonial-card { background: white; border: 1px solid var(--border-soft); border-radius: var(--radius-lg); padding: 2rem; transition: all var(--t); }
     .testimonial-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--plum-pale); }
@@ -444,10 +434,10 @@
     .cta-ring-2 { width: 220px; height: 220px; bottom: -90px; right: -50px; border-color: rgba(255,255,255,0.10); }
     .cta-inner { position: relative; max-width: 640px; margin: auto; }
     .cta-banner h2 {
-      font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 600;
-      color: white; margin-bottom: 1rem; line-height: 1.2;
+      font-family: 'Fraunces', serif; font-size: clamp(1.5rem, 4vw, 3.2rem); font-weight: 600;
+      color: white; margin-bottom: 1rem; line-height: 1.2; white-space: nowrap;
     }
-    .cta-banner p { font-size: 1.05rem; color: rgba(255,255,255,0.78); margin-bottom: 2rem; line-height: 1.7; }
+    .cta-banner p { font-size: 1.05rem; color: rgba(255,255,255,0.78); margin-bottom: 2rem; line-height: 1.7; white-space: nowrap; }
     .cta-chips { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
     .cta-chip { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.82rem; font-weight: 500; }
 
@@ -566,6 +556,8 @@
       .booking-buttons { flex-direction: column; }
       .booking-buttons .btn { justify-content: center; }
       #cards .section-subtitle { white-space: normal; }
+      #contact .section-header .section-subtitle { white-space: normal; }
+      .cta-banner h2, .cta-banner p { white-space: normal; }
     }
   </style>
 </head>
@@ -613,7 +605,7 @@
     <p class="hero-sub">Психолог</p>
     <p class="hero-desc">Допомагаю дорослим і парам знайти опору в собі — працюємо з тривогою, вигоранням, стосунками та складними життєвими змінами. У безпечному темпі, без осуду.</p>
     <div class="hero-buttons">
-      <a href="https://t.me/indulgenk" target="_blank" rel="noopener" class="btn btn-primary">Написати в телеграм для запису</a>
+      <a href="https://t.me/pani_psykholohynia" target="_blank" rel="noopener" class="btn btn-primary">Написати в телеграм для запису</a>
       <a href="#services" class="btn btn-outline">Формати роботи</a>
     </div>
   </div>
@@ -664,7 +656,7 @@
         <div class="inclusion-row">
           <span class="inclusion-badge fade-up"><span class="badge-icon">🏳️‍🌈</span>LGBTQ+ дружній простір</span>
           <span class="inclusion-badge fade-up"><span class="badge-icon">🎖️</span>Досвід роботи з військовими</span>
-          <span class="inclusion-badge fade-up"><span class="badge-icon">🌍</span>Людьми в еміграції</span>
+          <span class="inclusion-badge fade-up"><span class="badge-icon">🌍</span>Досвід роботи з людьми в еміграції</span>
         </div>
       </div>
     </div>
@@ -809,7 +801,7 @@
           <li>Без прив'язки до міста</li>
           <li>LGBTQ+ дружній підхід</li>
         </ul>
-        <a href="https://t.me/indulgenk" target="_blank" rel="noopener" class="service-price">Написати в телеграм →</a>
+        <a href="https://t.me/pani_psykholohynia" target="_blank" rel="noopener" class="service-price">Написати в телеграм →</a>
       </div>
     </div>
   </div>
@@ -907,22 +899,14 @@
           <div class="approach-item fade-up">
             <div class="approach-num">03</div>
             <div>
-              <h4>Творчість у терапії</h4>
-              <p>За потреби включаю техніки арт-терапії — інколи образ чи метафора допомагають побачити те, що складно назвати словами.</p>
-            </div>
-          </div>
-          <div class="approach-item fade-up">
-            <div class="approach-num">04</div>
-            <div>
               <h4>Постійний розвиток</h4>
-              <p>Регулярна супервізія та особиста терапія — щоб кожен клієнт отримував підтримку на найвищому рівні.</p>
+              <p>Систематично навчаюсь, маю супервізії та особисту терапію.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="approach-quote fade-up">
-        <p>Я вірю, що зміни можливі там, де є безпека, прийняття й чесний діалог. У роботі я уважна до темпу людини, її меж і унікального досвіду.</p>
-        <cite>— Юлія Кудренко, психолог</cite>
+        <p>Я вірю, що зміни можливі там, де є безпека, прийняття й чесний діалог.</p>
       </div>
     </div>
   </div>
@@ -935,14 +919,6 @@
       <span class="section-tag">Відгуки</span>
       <h2 class="section-title">Що кажуть клієнти</h2>
       <p class="section-subtitle">Реальні відгуки людей, які проходили терапію.</p>
-    </div>
-    <div class="rating-summary">
-      <span class="brand-mark"><span></span><span></span></span>
-      <div class="rating-num">5.0</div>
-      <div class="rating-meta">
-        <div class="rating-stars">★★★★★</div>
-        <div class="rating-count">на основі 2 відгуків · 188 проведених сесій</div>
-      </div>
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card fade-up">
@@ -977,8 +953,8 @@
   <div class="cta-ring cta-ring-2"></div>
   <div class="cta-inner">
     <h2>Готові зробити перший крок?</h2>
-    <p>Запрошую вас на консультацію, де ми разом будемо працювати над вашими цілями та досягати позитивних змін.</p>
-    <a href="https://t.me/indulgenk" target="_blank" rel="noopener" class="btn btn-white">Написати в телеграм для запису →</a>
+    <p>Запрошую вас на консультацію, де ми разом будемо працювати над вашими цілями та досягати змін.</p>
+    <a href="https://t.me/pani_psykholohynia" target="_blank" rel="noopener" class="btn btn-white">Написати в телеграм для запису →</a>
   </div>
 </div>
 
@@ -1003,14 +979,14 @@
           <span>Консультації проходять тільки онлайн?</span>
           <div class="faq-icon">+</div>
         </div>
-        <div class="faq-answer"><p>Так, усі сесії проводяться онлайн у відеоформаті. Це зручно, якщо ви живете в іншому місті чи за кордоном — географія не має значення.</p></div>
+        <div class="faq-answer"><p>Переважно так, у відеоформаті — це зручно, якщо ви живете в іншому місті чи за кордоном. Також можливі очні зустрічі у Тарту, Естонія.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">
           <span>Якою мовою відбуваються сесії?</span>
           <div class="faq-icon">+</div>
         </div>
-        <div class="faq-answer"><p>Консультації проходять українською мовою.</p></div>
+        <div class="faq-answer"><p>Консультації проходять українською або російською мовами.</p></div>
       </div>
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">
@@ -1070,14 +1046,10 @@
               <div class="booking-fact-lbl">Мова</div>
               <div class="booking-fact-val">Українська</div>
             </div>
-            <div class="booking-fact">
-              <div class="booking-fact-lbl">Рейтинг</div>
-              <div class="booking-fact-val">5.0 ★</div>
-            </div>
           </div>
         </div>
         <div class="booking-buttons">
-          <a href="https://t.me/indulgenk" target="_blank" rel="noopener" class="btn btn-white">Написати в телеграм для запису →</a>
+          <a href="https://t.me/pani_psykholohynia" target="_blank" rel="noopener" class="btn btn-white">Написати в телеграм для запису →</a>
         </div>
       </div>
 
@@ -1086,7 +1058,7 @@
           <div class="contact-card-icon">✈️</div>
           <div>
             <div class="cc-label">Telegram</div>
-            <div class="cc-val"><a href="https://t.me/indulgenk" target="_blank" rel="noopener">@indulgenk</a></div>
+            <div class="cc-val"><a href="https://t.me/pani_psykholohynia" target="_blank" rel="noopener">@pani_psykholohynia</a></div>
           </div>
         </div>
         <div class="contact-card">
@@ -1100,14 +1072,7 @@
           <div class="contact-card-icon">📍</div>
           <div>
             <div class="cc-label">Формат</div>
-            <div class="cc-val">Онлайн будь-де у світі · Офлайн у Тарту, Естонія</div>
-          </div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-icon">🗣️</div>
-          <div>
-            <div class="cc-label">Мова консультацій</div>
-            <div class="cc-val">Українська</div>
+            <div class="cc-val">Онлайн будь-де у світі<br>Офлайн у Тарту, Естонія</div>
           </div>
         </div>
       </div>
@@ -1141,7 +1106,7 @@
     <div class="footer-col">
       <h4>Контакти</h4>
       <ul>
-        <li><a href="https://t.me/indulgenk" target="_blank" rel="noopener">Telegram @indulgenk</a></li>
+        <li><a href="https://t.me/pani_psykholohynia" target="_blank" rel="noopener">Telegram @pani_psykholohynia</a></li>
         <li><a href="https://www.instagram.com/pani_psykholohynia" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="#contact">Записатися</a></li>
         <li><a href="dogovir.html">Договір публічної оферти</a></li>
@@ -1150,7 +1115,7 @@
   </div>
   <div class="footer-bottom">
     <p>&copy; 2026 Юлія Кудренко — Психолог. Усі права захищено.</p>
-    <p>Написати в телеграм: <a href="https://t.me/indulgenk" target="_blank" rel="noopener">@indulgenk</a></p>
+    <p>Написати в телеграм: <a href="https://t.me/pani_psykholohynia" target="_blank" rel="noopener">@pani_psykholohynia</a></p>
   </div>
 </footer>
 
@@ -1251,7 +1216,7 @@
           "name": "Консультації проходять тільки онлайн?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Так, усі сесії проводяться онлайн у відеоформаті."
+            "text": "Переважно так, у відеоформаті. Також можливі очні зустрічі у Тарту, Естонія."
           }
         }
       ]
