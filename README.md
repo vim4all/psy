@@ -24,3 +24,9 @@ python3 -m http.server 8000
 ```
 
 Then open `http://localhost:8000`.
+
+## Cache-busting after an update
+
+Browsers cache images aggressively. `Yuliya.jpg` and the files in `certs/` are referenced with a `?v=1` query string — after replacing an image file, bump that number wherever the file is referenced (e.g. `?v=2`) so visitors' browsers fetch the new version instead of an old cached copy. `index.html` and `dogovir.html` also carry no-cache meta tags so the page markup itself isn't held onto by the browser.
+
+If you update a file and still see the old version, force a hard refresh: `Ctrl+Shift+R` (Windows/Linux) or `Cmd+Shift+R` (Mac).
