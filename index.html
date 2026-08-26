@@ -157,7 +157,9 @@
       font-size: clamp(1.3rem, 3vw, 1.75rem);
       color: var(--text-mid); margin-bottom: 1.5rem; font-weight: 400;
     }
-    .hero-desc { font-size: 1rem; color: var(--text-muted); max-width: 480px; margin-bottom: 2.5rem; line-height: 1.85; }
+    .hero-desc { font-size: 1rem; color: var(--text-muted); max-width: 480px; line-height: 1.85; }
+    .hero-desc-main { margin-bottom: 0.4rem; }
+    .hero-desc-line { margin-bottom: 2.5rem; white-space: nowrap; max-width: none; }
     .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
 
     .btn {
@@ -320,7 +322,7 @@
     }
     .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--plum-pale); }
     .service-card.has-photo { padding: 0; overflow: hidden; }
-    .service-photo { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; }
+    .service-photo { display: block; width: 100%; aspect-ratio: 1/1; object-fit: cover; background: white; }
     .service-card.has-photo .service-card-body { padding: 1.5rem 2rem 2rem; display: flex; flex-direction: column; flex: 1; }
     .service-card.featured { background: var(--plum); color: white; border-color: var(--plum); }
     .service-card.featured h3, .service-card.featured p { color: white; }
@@ -603,7 +605,8 @@
     <span class="hero-badge">Психолог · Онлайн та офлайн</span>
     <h1>Юлія<br><em>Кудренко</em></h1>
     <p class="hero-sub">Психолог</p>
-    <p class="hero-desc">Допомагаю дорослим і парам знайти опору в собі — працюємо з тривогою, вигоранням, стосунками та складними життєвими змінами. У безпечному темпі, без осуду.</p>
+    <p class="hero-desc hero-desc-main">Допомагаю дорослим і парам знайти опору в собі — працюємо з тривогою, вигоранням, стосунками та складними життєвими змінами.</p>
+    <p class="hero-desc hero-desc-line">У безпечному темпі, без осуду.</p>
     <div class="hero-buttons">
       <a href="https://t.me/pani_psykholohynia" target="_blank" rel="noopener" class="btn btn-primary">Написати в телеграм для запису</a>
       <a href="#services" class="btn btn-outline">Формати роботи</a>
@@ -817,21 +820,21 @@
     </div>
     <div class="services-grid">
       <div class="service-card has-photo fade-up">
-        <img src="products/pro-hroshi.jpg" alt="Колода МАК «Про гроші: перезавантаження сенсів»" class="service-photo" loading="lazy" />
+        <img src="products/pro-hroshi.jpg" alt="Метафоричні карти «Гроші. Перезавантаження сенсів»" class="service-photo" loading="lazy" />
         <div class="service-card-body">
           <span class="service-tag">Колода МАК</span>
-          <h3>«Про гроші»</h3>
-          <p>Колода метафоричних карт для дослідження свого ставлення до грошей, достатку та фінансових рішень.</p>
-          <span class="service-price">1000 грн / колода</span>
+          <h3>«Гроші. Перезавантаження сенсів»</h3>
+          <p>70 карток із метафоричними образами та трансформаційними фразами для роботи з фінансовими переконаннями, страхами й обмеженнями.</p>
+          <span class="service-price">1200 грн / колода</span>
         </div>
       </div>
       <div class="service-card has-photo fade-up">
-        <img src="products/dzherelo-syly.jpg" alt="Колода МАК «Джерело моєї сили»" class="service-photo" loading="lazy" />
+        <img src="products/dzherelo-syly.jpg" alt="Метафоричні карти «Джерело моєї сили»" class="service-photo" loading="lazy" />
         <div class="service-card-body">
           <span class="service-tag">Колода МАК</span>
           <h3>«Джерело моєї сили»</h3>
-          <p>Колода метафоричних карт для пошуку внутрішніх ресурсів, опори та підтримки в складні періоди.</p>
-          <span class="service-price">1000 грн / колода</span>
+          <p>Ресурсна колода — 60 карток і фраз від 30 співавторів, щоб знайти опору, натхнення та внутрішню силу в складні періоди.</p>
+          <span class="service-price">950 грн / колода</span>
         </div>
       </div>
     </div>
