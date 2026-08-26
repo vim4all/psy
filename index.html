@@ -322,7 +322,8 @@
     }
     .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--plum-pale); }
     .service-card.has-photo { padding: 0; overflow: hidden; }
-    .service-photo { display: block; width: 100%; aspect-ratio: 1/1; object-fit: cover; background: white; }
+    .service-photo { display: block; width: 100%; aspect-ratio: 1/1; object-fit: cover; background: white; transition: var(--t); }
+    a:hover > .service-photo { opacity: 0.88; }
     .service-card.has-photo .service-card-body { padding: 1.5rem 2rem 2rem; display: flex; flex-direction: column; flex: 1; }
     .service-card.featured { background: var(--plum); color: white; border-color: var(--plum); }
     .service-card.featured h3, .service-card.featured p { color: white; }
@@ -820,21 +821,25 @@
     </div>
     <div class="services-grid">
       <div class="service-card has-photo fade-up">
-        <img src="products/pro-hroshi.jpg" alt="Метафоричні карти «Гроші. Перезавантаження сенсів»" class="service-photo" loading="lazy" />
+        <a href="karta-hroshi.html" aria-label="Детальніше про колоду «Гроші. Перезавантаження сенсів»">
+          <img src="products/pro-hroshi.jpg" alt="Метафоричні карти «Гроші. Перезавантаження сенсів»" class="service-photo" loading="lazy" />
+        </a>
         <div class="service-card-body">
           <span class="service-tag">Колода МАК</span>
           <h3>«Гроші. Перезавантаження сенсів»</h3>
           <p>70 карток із метафоричними образами та трансформаційними фразами для роботи з фінансовими переконаннями, страхами й обмеженнями.</p>
-          <span class="service-price">1200 грн / колода</span>
+          <a href="karta-hroshi.html" class="service-price">1200 грн / колода — детальніше →</a>
         </div>
       </div>
       <div class="service-card has-photo fade-up">
-        <img src="products/dzherelo-syly.jpg" alt="Метафоричні карти «Джерело моєї сили»" class="service-photo" loading="lazy" />
+        <a href="karta-dzherelo.html" aria-label="Детальніше про колоду «Джерело моєї сили»">
+          <img src="products/dzherelo-syly.jpg" alt="Метафоричні карти «Джерело моєї сили»" class="service-photo" loading="lazy" />
+        </a>
         <div class="service-card-body">
           <span class="service-tag">Колода МАК</span>
           <h3>«Джерело моєї сили»</h3>
           <p>Ресурсна колода — 60 карток і фраз від 30 співавторів, щоб знайти опору, натхнення та внутрішню силу в складні періоди.</p>
-          <span class="service-price">950 грн / колода</span>
+          <a href="karta-dzherelo.html" class="service-price">950 грн / колода — детальніше →</a>
         </div>
       </div>
     </div>

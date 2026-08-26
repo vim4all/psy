@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Метафоричні карти «Гроші. Перезавантаження сенсів» — 70 карток для роботи з фінансовими переконаннями, страхами й обмеженнями. 1200 грн." />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>Метафоричні карти «Гроші. Перезавантаження сенсів» — Юлія Кудренко</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --plum: #2f7a52;
+    --plum-dark: #1f3d2c;
+    --plum-pale: #d9ead9;
+    --bg: #f4f7ef;
+    --surface: #eaf0e3;
+    --text: #202b1f;
+    --text-mid: #46503f;
+    --text-muted: #778070;
+    --border: rgba(47,122,82,0.20);
+    --radius: 14px;
+    --radius-lg: 24px;
+    --shadow: 0 8px 40px rgba(31,61,44,0.14);
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .top {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(253,251,250,0.96); backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  .top a.back { color: var(--plum); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+  .top a.back:hover { text-decoration: underline; }
+  .top .name { font-family: 'Fraunces', serif; font-weight: 600; color: var(--plum-dark); font-size: 1.1rem; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 3rem 1.5rem 5rem; }
+  .product-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3.5rem; }
+  .main-photo {
+    width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: var(--radius-lg);
+    background: white; box-shadow: var(--shadow); cursor: pointer; display: block;
+  }
+  .thumb-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; margin-top: 0.8rem; }
+  .thumb-grid img {
+    width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 10px; background: white;
+    border: 1px solid var(--border); cursor: pointer; transition: 0.2s ease;
+  }
+  .thumb-grid img:hover { border-color: var(--plum); transform: translateY(-2px); }
+  .product-info .tag {
+    display: inline-block; background: var(--plum-pale); color: var(--plum-dark);
+    font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+    padding: 0.3rem 0.8rem; border-radius: 50px; margin-bottom: 1rem;
+  }
+  .product-info h1 {
+    font-family: 'Fraunces', serif; font-size: clamp(1.7rem, 3.5vw, 2.3rem); font-weight: 600;
+    color: var(--plum-dark); line-height: 1.25; margin-bottom: 0.9rem;
+  }
+  .product-info .price {
+    font-family: 'Fraunces', serif; font-size: 1.9rem; font-weight: 600; color: var(--plum);
+    margin-bottom: 1.4rem;
+  }
+  .product-info .desc { color: var(--text-mid); font-size: 0.98rem; line-height: 1.85; margin-bottom: 1.6rem; }
+  .spec-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; margin-bottom: 1.8rem; }
+  .spec-list li { font-size: 0.9rem; color: var(--text-mid); display: flex; gap: 0.6rem; }
+  .spec-list li b { color: var(--text); min-width: 150px; flex-shrink: 0; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--plum); color: white; padding: 0.85rem 1.8rem; border-radius: 50px;
+    font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: 0.2s ease;
+  }
+  .btn:hover { background: var(--plum-dark); transform: translateY(-2px); }
+  section.body-copy h2 {
+    font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 600; color: var(--plum-dark);
+    margin-bottom: 1rem;
+  }
+  section.body-copy p { color: var(--text-mid); font-size: 0.95rem; line-height: 1.85; margin-bottom: 1rem; }
+  section.body-copy ul { margin: 0 0 1rem 1.2rem; color: var(--text-mid); font-size: 0.95rem; line-height: 1.85; }
+  .lightbox {
+    display: none; position: fixed; inset: 0; z-index: 2000;
+    background: rgba(20,26,20,0.9); align-items: center; justify-content: center; padding: 3rem 1.5rem;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: min(900px, 92vw); max-height: 86vh; border-radius: var(--radius); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+  .lightbox-close {
+    position: absolute; top: 1.5rem; right: 1.8rem; width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); color: white;
+    font-size: 1.3rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  }
+  .lightbox-close:hover { background: rgba(255,255,255,0.22); }
+  @media (max-width: 760px) {
+    .product-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .thumb-grid { grid-template-columns: repeat(5, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<div class="top">
+  <span class="name">Юлія Кудренко · Психолог</span>
+  <a href="index.html#cards" class="back">← До всіх карт МАК</a>
+</div>
+
+<div class="wrap">
+  <div class="product-grid">
+    <div>
+      <img src="products/hroshi/1.jpg" alt="Метафоричні карти «Гроші. Перезавантаження сенсів»" class="main-photo" id="mainPhoto" onclick="openLightbox(this.src)" />
+      <div class="thumb-grid" id="thumbGrid"></div>
+    </div>
+    <div class="product-info">
+      <span class="tag">Колода МАК</span>
+      <h1>«Гроші. Перезавантаження сенсів»</h1>
+      <div class="price">1200 грн</div>
+      <p class="desc">Колода метафоричних карт для глибокого дослідження стосунків із грішми — внутрішніх переконань, страхів та обмежень, що впливають на фінансові рішення й рівень достатку. 70 карток із метафоричними образами, обмежуючими переконаннями та трансформаційними фразами створені для м'якої, але глибокої роботи з фінансовим мисленням.</p>
+      <ul class="spec-list">
+        <li><b>Кількість карток</b> 70</li>
+        <li><b>Розмір картки</b> 8,4 × 11,5 см</li>
+        <li><b>Формат</b> двосторонні картки — зображення та фраза</li>
+        <li><b>У комплекті</b> 70 карток, інструкція на 20 сторінок, міцна коробка для зберігання</li>
+        <li><b>Мова</b> українська</li>
+        <li><b>Рік випуску</b> 2026</li>
+        <li><b>Авторка</b> Ольга Соколова</li>
+      </ul>
+      <a href="https://t.me/pani_psykholohynia" target="_blank" rel="noopener" class="btn">Написати в телеграм, щоб замовити →</a>
+    </div>
+  </div>
+
+  <section class="body-copy">
+    <h2>Про колоду</h2>
+    <p>Підходить психологам, психотерапевтам, коучам, фахівцям трансформаційних практик, а також для самостійної роботи над собою. Ефективна для індивідуальної та групової роботи з дорослими й підлітками.</p>
+    <p>Колоду можна використовувати окремо або поєднувати з іншими колодами метафоричних карт. Вона запрошує глибше подивитися на власні фінансові сценарії, звільнитися від обмежуючих патернів і побудувати здоровіші стосунки з грошима.</p>
+  </section>
+</div>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Закрити">✕</button>
+  <img id="lightbox-img" src="" alt="Картка колоди — збільшене зображення" />
+</div>
+
+<script>
+  const total = 7;
+  const grid = document.getElementById('thumbGrid');
+  for (let i = 1; i <= total; i++) {
+    const img = document.createElement('img');
+    img.src = `products/hroshi/${i}.jpg`;
+    img.alt = `Фото колоди «Гроші. Перезавантаження сенсів» ${i}`;
+    img.loading = 'lazy';
+    img.onclick = () => { document.getElementById('mainPhoto').src = img.src; openLightbox(img.src); };
+    grid.appendChild(img);
+  }
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(e) {
+    if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+</script>
+
+</body>
+</html>
